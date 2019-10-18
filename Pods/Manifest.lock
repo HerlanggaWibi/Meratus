@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (4.9.0)
+  - FontAwesome.swift (1.6.0)
+  - SkyFloatingLabelTextField (3.7.0)
+  - SwiftyJSON (4.3.0)
+  - TinyConstraints (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - FontAwesome.swift (~> 1.6.0)
+  - SkyFloatingLabelTextField (~> 3.0)
+  - SwiftyJSON (~> 4.0)
+  - TinyConstraints
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - FontAwesome.swift
+    - SkyFloatingLabelTextField
+    - SwiftyJSON
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  FontAwesome.swift: 71a422e7b209ee940c7c21a5d13964ecf2897ca4
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+
+PODFILE CHECKSUM: bc10d189b200a747b265e5a76571503e63bdba8f
+
+COCOAPODS: 1.5.3
