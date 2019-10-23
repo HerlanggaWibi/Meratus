@@ -18,7 +18,6 @@ class ScheduleViewModel {
     var piname = [String]()
     var picode = [String]()
     
-    var dataListSchedule = [ListScheduleModel?]()
     
     var list: [RemotePelabuhan?]? {
         didSet {
@@ -26,17 +25,26 @@ class ScheduleViewModel {
                 piname.append(kota!.piname)
                 picode.append(kota!.picode)
             }
+            
         }
     }
     
-    var listSchedule: [ListScheduleModel?]? {
+    var listData = [ListScheduleModel?]()
+    
+    var getListSchedule: [ListScheduleModel?]? {
         didSet {
-            for list in listSchedule! {
-                self.dataListSchedule = [list]
+            listData.removeAll()
+            for list in getListSchedule! {
+                self.listData.append(list)
+                
             }
+            listClosure?()
+            didFinish?()
         }
     }
     
+    var listClosure: (() -> ())?
+    var didFinish: (() -> ())?
     
     init(scheduleServices1: ScheduleServices) {
         self.scheduleServices = scheduleServices1
@@ -52,17 +60,16 @@ class ScheduleViewModel {
 
             self.list = response
             
-    })
-        
-        func getScheduleList(pol: String, pod: String, fromDate: String, recnum: Int, token: String) {
+        })}
+    
+    func getScheduleList(pol: String, pod: String, fromDate: String, recnum: Int, token: String) {
             scheduleServices?.requestListSchedule(pol: pol, pod: pod, fromDate: fromDate, recnum: recnum, token: token, completion: { (response, error) in
                 if let error = error {
                     print("error: \(error)")
                 }
-                
-                self.listSchedule = response
+                print("berhasil tangkap data")
+                self.getListSchedule = response
             })
         }
     
-}
 }

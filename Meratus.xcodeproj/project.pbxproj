@@ -25,6 +25,16 @@
 		0FDD69782359A35E00BE021D /* ListScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD69772359A35E00BE021D /* ListScheduleModel.swift */; };
 		0FDD697A2359BF4B00BE021D /* ScheduleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDD69792359BF4B00BE021D /* ScheduleListViewModel.swift */; };
 		0FE78015235070C100CD6361 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE78014235070C100CD6361 /* Schedule.swift */; };
+		0FEA5FE9235DBC7D0065DF98 /* APDynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA5FDE235DBC7C0065DF98 /* APDynamicType.swift */; };
+		0FEA5FEA235DBC7D0065DF98 /* APHorizontalScrollCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE0235DBC7C0065DF98 /* APHorizontalScrollCollectionView.swift */; };
+		0FEA5FEB235DBC7D0065DF98 /* APCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE1235DBC7C0065DF98 /* APCalendarViewController.swift */; };
+		0FEA5FEC235DBC7D0065DF98 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE2235DBC7C0065DF98 /* Calendar.storyboard */; };
+		0FEA5FED235DBC7D0065DF98 /* APCustomCalendarYearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE4235DBC7C0065DF98 /* APCustomCalendarYearCell.swift */; };
+		0FEA5FEE235DBC7D0065DF98 /* APCustomCalendarContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE5235DBC7C0065DF98 /* APCustomCalendarContainer.swift */; };
+		0FEA5FEF235DBC7D0065DF98 /* CalendarAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE6235DBC7C0065DF98 /* CalendarAssets.xcassets */; };
+		0FEA5FF0235DBC7D0065DF98 /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA5FE8235DBC7C0065DF98 /* HapticFeedbackGenerator.swift */; };
+		0FF6026B235D4AAC0078089E /* ListScheduleNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF6026A235D4AAC0078089E /* ListScheduleNC.swift */; };
+		0FF7B8C9235EBCAF00F08DF5 /* AccountNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF7B8C8235EBCAF00F08DF5 /* AccountNC.swift */; };
 		C90F2CC5291568110DBE65B8 /* Pods_Meratus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9904763A715AF69B1167DA67 /* Pods_Meratus.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +59,17 @@
 		0FDD69772359A35E00BE021D /* ListScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleModel.swift; sourceTree = "<group>"; };
 		0FDD69792359BF4B00BE021D /* ScheduleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListViewModel.swift; sourceTree = "<group>"; };
 		0FE78014235070C100CD6361 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		0FEA5FDA235DBB7A0065DF98 /* AVCalendarFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AVCalendarFramework; path = "../../../Downloads/vyasanirudh-AVCalendar-2faa3fd/AVCalendarFramework"; sourceTree = "<group>"; };
+		0FEA5FDE235DBC7C0065DF98 /* APDynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APDynamicType.swift; sourceTree = "<group>"; };
+		0FEA5FE0235DBC7C0065DF98 /* APHorizontalScrollCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APHorizontalScrollCollectionView.swift; sourceTree = "<group>"; };
+		0FEA5FE1235DBC7C0065DF98 /* APCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APCalendarViewController.swift; sourceTree = "<group>"; };
+		0FEA5FE2235DBC7C0065DF98 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		0FEA5FE4235DBC7C0065DF98 /* APCustomCalendarYearCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APCustomCalendarYearCell.swift; sourceTree = "<group>"; };
+		0FEA5FE5235DBC7C0065DF98 /* APCustomCalendarContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APCustomCalendarContainer.swift; sourceTree = "<group>"; };
+		0FEA5FE6235DBC7C0065DF98 /* CalendarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CalendarAssets.xcassets; sourceTree = "<group>"; };
+		0FEA5FE8235DBC7C0065DF98 /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
+		0FF6026A235D4AAC0078089E /* ListScheduleNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScheduleNC.swift; sourceTree = "<group>"; };
+		0FF7B8C8235EBCAF00F08DF5 /* AccountNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNC.swift; sourceTree = "<group>"; };
 		9904763A715AF69B1167DA67 /* Pods_Meratus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meratus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6CCF8D3A1058317C5DA2C2C /* Pods-Meratus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meratus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Meratus/Pods-Meratus.debug.xcconfig"; sourceTree = "<group>"; };
 		F30E162A7682A04E6C0BE405 /* Pods-Meratus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meratus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Meratus/Pods-Meratus.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +117,7 @@
 		0FDC24C5234F0E0300552BCB /* Meratus */ = {
 			isa = PBXGroup;
 			children = (
+				0FEA5FDC235DBC7C0065DF98 /* AVCalendar */,
 				0FDD696E23595C0B00BE021D /* Cell */,
 				0F72A70723558D37004A7A9E /* Services */,
 				0FDC24DA234F0EC500552BCB /* View */,
@@ -106,6 +128,8 @@
 				0FDC24CD234F0E0E00552BCB /* Assets.xcassets */,
 				0FDC24CF234F0E0E00552BCB /* LaunchScreen.storyboard */,
 				0FDC24D2234F0E0E00552BCB /* Info.plist */,
+				0FF6026A235D4AAC0078089E /* ListScheduleNC.swift */,
+				0FF7B8C8235EBCAF00F08DF5 /* AccountNC.swift */,
 			);
 			path = Meratus;
 			sourceTree = "<group>";
@@ -150,6 +174,54 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		0FEA5FDC235DBC7C0065DF98 /* AVCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA5FDD235DBC7C0065DF98 /* DynamicType */,
+				0FEA5FDF235DBC7C0065DF98 /* CustomCalendarController */,
+				0FEA5FE7235DBC7C0065DF98 /* Protocols */,
+			);
+			name = AVCalendar;
+			path = "../../../../Downloads/vyasanirudh-AVCalendar-2faa3fd/AVCalendarSample/AVCalendar";
+			sourceTree = "<group>";
+		};
+		0FEA5FDD235DBC7C0065DF98 /* DynamicType */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA5FDE235DBC7C0065DF98 /* APDynamicType.swift */,
+			);
+			path = DynamicType;
+			sourceTree = "<group>";
+		};
+		0FEA5FDF235DBC7C0065DF98 /* CustomCalendarController */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA5FE0235DBC7C0065DF98 /* APHorizontalScrollCollectionView.swift */,
+				0FEA5FE1235DBC7C0065DF98 /* APCalendarViewController.swift */,
+				0FEA5FE2235DBC7C0065DF98 /* Calendar.storyboard */,
+				0FEA5FE3235DBC7C0065DF98 /* APCustomCalenderCells */,
+				0FEA5FE5235DBC7C0065DF98 /* APCustomCalendarContainer.swift */,
+				0FEA5FE6235DBC7C0065DF98 /* CalendarAssets.xcassets */,
+			);
+			path = CustomCalendarController;
+			sourceTree = "<group>";
+		};
+		0FEA5FE3235DBC7C0065DF98 /* APCustomCalenderCells */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA5FE4235DBC7C0065DF98 /* APCustomCalendarYearCell.swift */,
+			);
+			path = APCustomCalenderCells;
+			sourceTree = "<group>";
+		};
+		0FEA5FE7235DBC7C0065DF98 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA5FE8235DBC7C0065DF98 /* HapticFeedbackGenerator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		19B6008A4778CE7F7D1ADF51 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +234,7 @@
 		86EB8C52758DB26A1135227B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FEA5FDA235DBB7A0065DF98 /* AVCalendarFramework */,
 				9904763A715AF69B1167DA67 /* Pods_Meratus.framework */,
 			);
 			name = Frameworks;
@@ -227,6 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FEA5FEC235DBC7D0065DF98 /* Calendar.storyboard in Resources */,
+				0FEA5FEF235DBC7D0065DF98 /* CalendarAssets.xcassets in Resources */,
 				0FDC24D1234F0E0E00552BCB /* LaunchScreen.storyboard in Resources */,
 				0FDC24CE234F0E0E00552BCB /* Assets.xcassets in Resources */,
 				0FDC24CC234F0E0300552BCB /* Main.storyboard in Resources */,
@@ -291,12 +366,20 @@
 				0FE78015235070C100CD6361 /* Schedule.swift in Sources */,
 				0F4812C7235466C5000FBC49 /* LoginModel.swift in Sources */,
 				0FDC24C9234F0E0300552BCB /* Home.swift in Sources */,
+				0FEA5FEB235DBC7D0065DF98 /* APCalendarViewController.swift in Sources */,
 				0FDD697A2359BF4B00BE021D /* ScheduleListViewModel.swift in Sources */,
+				0FEA5FE9235DBC7D0065DF98 /* APDynamicType.swift in Sources */,
 				0F4812C52354624C000FBC49 /* API_Services.swift in Sources */,
 				0FDC24C7234F0E0300552BCB /* AppDelegate.swift in Sources */,
 				0FDD697223598E0300BE021D /* ScheduleViewModel.swift in Sources */,
+				0FEA5FEE235DBC7D0065DF98 /* APCustomCalendarContainer.swift in Sources */,
 				0F72FC882355747300248BD5 /* Account.swift in Sources */,
+				0FF6026B235D4AAC0078089E /* ListScheduleNC.swift in Sources */,
+				0FEA5FF0235DBC7D0065DF98 /* HapticFeedbackGenerator.swift in Sources */,
+				0FEA5FED235DBC7D0065DF98 /* APCustomCalendarYearCell.swift in Sources */,
+				0FF7B8C9235EBCAF00F08DF5 /* AccountNC.swift in Sources */,
 				0FDD6976235994A400BE021D /* RemotePelabuhan.swift in Sources */,
+				0FEA5FEA235DBC7D0065DF98 /* APHorizontalScrollCollectionView.swift in Sources */,
 				0F4812C023542C82000FBC49 /* Login.swift in Sources */,
 				0FDD69782359A35E00BE021D /* ListScheduleModel.swift in Sources */,
 				0FDD696D23595AF700BE021D /* ScheduleList.swift in Sources */,
@@ -448,16 +531,20 @@
 			baseConfigurationReference = D6CCF8D3A1058317C5DA2C2C /* Pods-Meratus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62PYG5KRDL;
 				INFOPLIST_FILE = Meratus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MeratusLine.Meratus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -466,16 +553,20 @@
 			baseConfigurationReference = F30E162A7682A04E6C0BE405 /* Pods-Meratus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 62PYG5KRDL;
 				INFOPLIST_FILE = Meratus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MeratusLine.Meratus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

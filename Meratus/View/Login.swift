@@ -24,6 +24,7 @@ class Login: UIViewController {
 
         // Do any additional setup after loading the view.
         setupView()
+        customView()
     }
     
     let userDefault = UserDefaults.standard
@@ -34,14 +35,14 @@ class Login: UIViewController {
     
     lazy var userName: SkyFloatingLabelTextFieldWithIcon = {
         
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        let overcastBlueColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         let textFieldFrame = CGRect(x: 150, y: 10, width: 120, height: 45)
         let userName = SkyFloatingLabelTextFieldWithIcon(frame: textFieldFrame, iconType: .image)
         //userName.titleFont = UIFont(name: "FontAwesome", size: 15)!
         
-        userName.iconFont = UIFont(name: "Copperplate", size: 15)
-        userName.titleFont = UIFont(name: "Copperplate", size: 15)!
-        userName.placeholderFont = UIFont(name: "Copperplate", size: 15)!
+        userName.iconFont = UIFont(name: "Chalkboard SE Bold", size: 17)
+        //userName.titleFont = UIFont(name: "Copperplate", size: 15)!
+        userName.placeholderFont = UIFont(name: "Chalkboard SE Bold", size: 17)
         userName.placeholder = "Input Username"
         userName.title = "Username"
         userName.tintColor = overcastBlueColor
@@ -57,13 +58,13 @@ class Login: UIViewController {
     
     lazy var passWord: SkyFloatingLabelTextFieldWithIcon = {
         
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        let overcastBlueColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         let textFieldFrame = CGRect(x: 150, y: 10, width: 120, height: 45)
         let passWord = SkyFloatingLabelTextFieldWithIcon(frame: textFieldFrame, iconType: .image)
         passWord.isSecureTextEntry = true
-        passWord.iconFont = UIFont(name: "Copperplate", size: 15)
-        passWord.titleFont = UIFont(name: "Copperplate", size: 15)!
-        passWord.placeholderFont = UIFont(name: "Copperplate", size: 15)!
+        passWord.iconFont = UIFont(name: "Chalkboard SE Bold", size: 17)
+        //passWord.titleFont = UIFont(name: "Copperplate", size: 15)!
+        passWord.placeholderFont = UIFont(name: "Chalkboard SE Bold", size: 17)
         passWord.placeholder = "Input Password"
         passWord.title = "Password"
         passWord.tintColor = overcastBlueColor
@@ -79,8 +80,8 @@ class Login: UIViewController {
     lazy var loginBtn: UIButton = {
        let loginBtn = UIButton(type: .custom)
         loginBtn.setTitle("LOGIN", for: .normal)
-        loginBtn.titleLabel?.font = UIFont(name: "Copperplate", size: 15)
-        loginBtn.backgroundColor = UIColor(red:0.02, green:0.23, blue:0.48, alpha:1.0)
+        loginBtn.titleLabel?.font = UIFont(name: "Chalkboard SE Bold", size: 17)
+        loginBtn.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         loginBtn.addTarget(self, action: #selector(login), for: .touchUpInside)
         return loginBtn
     }()
@@ -88,7 +89,7 @@ class Login: UIViewController {
     lazy var forgetPasswordBtn: UIButton = {
         let forgetPasswordBtn = UIButton(type: .custom)
         forgetPasswordBtn.setTitle("Forget Password?", for: .normal)
-        forgetPasswordBtn.setTitleColor(UIColor(red:0.02, green:0.23, blue:0.48, alpha:1.0), for: .normal)
+        forgetPasswordBtn.setTitleColor(UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0), for: .normal)
         forgetPasswordBtn.addTarget(self, action: #selector(forgetPassword), for: .touchUpInside)
         return forgetPasswordBtn
     }()
@@ -101,9 +102,12 @@ class Login: UIViewController {
     @objc func login() {
         indicatorLogin.startAnimating()
         viewModel.login(uname: userName.text!, pwd: passWord.text!, sessionID: "123")
-        indicatorLogin.stopAnimating()
+        
         viewModel.didFinishLogin = {
-            self.performSegue(withIdentifier: "akun", sender: self)
+            self.indicatorLogin.stopAnimating()
+            
+            self.performSegue(withIdentifier: "Home", sender: self)
+            
         }
         
     }
@@ -138,6 +142,10 @@ class Login: UIViewController {
         forgetPasswordBtn.rightToSuperview(offset: -25, usingSafeArea: true)
         //loginBtn.leftToSuperview(offset: 25, usingSafeArea: true)
         forgetPasswordBtn.height(20)
+    }
+    
+    func customView() {
+        loginBtn.roundedBtn(corner: 5)
     }
     
     func requestFetchData(username: String, password: String, sessionId: String) {

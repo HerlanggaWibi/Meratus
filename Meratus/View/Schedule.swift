@@ -11,20 +11,23 @@ import SkyFloatingLabelTextField
 import TinyConstraints
 
 class Schedule: UIViewController {
-    
-    let pickerDataLoading = ["AMBON","BALIKPAPAN", "BANJARMASIN", "BELAWAN", "BENETE", "BENGKULU", "BENOA", "BITUNG", "CALABAI", "DILI"]
-    let pickerDataDischarge = ["AMBON","BALIKPAPAN", "BANJARMASIN", "BELAWAN", "BENETE", "BENGKULU", "BENOA", "BITUNG", "CALABAI", "DILI"]
-    let pickerDataRecord = ["3","4","5"]
-    
+
     @IBOutlet weak var imgBanner: UIImageView!
     
     var viewModel = ScheduleViewModel(scheduleServices1: ScheduleServices())
     
-    var rsgnFirstRespon: Int?
+    private let calendar: AVCalendarViewController = AVCalendarViewController.calendar
+    private var selectedDate: AVDate?
+    
+    var piCodeAwal: String?
+    var piCodeTujuan: String?
+    
+    var listDataSchedule = [ListScheduleModel?]()
     
     lazy var datePicker: UIDatePicker = {
        let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
+        datePicker.backgroundColor = .white
         datePicker.addTarget(self, action: #selector(datePickerChanged(_:)), for: .valueChanged)
         return datePicker
     }()
@@ -38,19 +41,7 @@ class Schedule: UIViewController {
     
     lazy var PortOfLoadingPickerView: UIPickerView = {
        let pickerView = UIPickerView()
-        
-        return pickerView
-    }()
-    
-    lazy var PortOfLoadingPickerView1: UIPickerView = {
-        let pickerView = UIPickerView()
-        
-        return pickerView
-    }()
-    
-    lazy var PortOfLoadingPickerView2: UIPickerView = {
-        let pickerView = UIPickerView()
-        
+        pickerView.backgroundColor = .white
         return pickerView
     }()
     
@@ -73,20 +64,21 @@ class Schedule: UIViewController {
         lblSchedule.frame = CGRect(x: 50, y: 4, width: 100, height: 30)
         lblSchedule.text = "Schedule"
         lblSchedule.font = UIFont(name: "Chalkboard SE Bold", size: 17)
+        lblSchedule.font = UIFont.boldSystemFont(ofSize: lblSchedule.font.pointSize)
         lblSchedule.textColor = UIColor(red:0.02, green:0.23, blue:0.48, alpha:1.0)
         return lblSchedule
     }()
     
     lazy var shipmentDate: SkyFloatingLabelTextFieldWithIcon = {
         
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        let overcastBlueColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         let textFieldFrame = CGRect(x: 150, y: 10, width: 120, height: 45)
         let userName = SkyFloatingLabelTextFieldWithIcon(frame: textFieldFrame, iconType: .image)
         //userName.titleFont = UIFont(name: "FontAwesome", size: 15)!
         
-        userName.iconFont = UIFont(name: "Copperplate", size: 15)
-        userName.titleFont = UIFont(name: "Copperplate", size: 15)!
-        userName.placeholderFont = UIFont(name: "Copperplate", size: 15)!
+        userName.iconFont = UIFont(name: "Chalkboard SE Bold", size: 17)
+        //userName.titleFont = UIFont(name: "Chalkboard SE Bold", size: 17)!
+        userName.placeholderFont = UIFont(name: "Chalkboard SE Bold", size: 17)
         userName.placeholder = ""
         userName.title = "Shipment Date"
         userName.tintColor = overcastBlueColor
@@ -102,14 +94,14 @@ class Schedule: UIViewController {
     
     lazy var portOfLoading: SkyFloatingLabelTextFieldWithIcon = {
         
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        let overcastBlueColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         let textFieldFrame = CGRect(x: 150, y: 10, width: 120, height: 45)
         let userName = SkyFloatingLabelTextFieldWithIcon(frame: textFieldFrame, iconType: .image)
         //userName.titleFont = UIFont(name: "FontAwesome", size: 15)!
         
-        userName.iconFont = UIFont(name: "Copperplate", size: 15)
-        userName.titleFont = UIFont(name: "Copperplate", size: 15)!
-        userName.placeholderFont = UIFont(name: "Copperplate", size: 15)!
+        userName.iconFont = UIFont(name: "Chalkboard SE Bold", size: 17)
+        //userName.titleFont = UIFont(name: "Chalkboard SE Bold", size: 17)!
+        userName.placeholderFont = UIFont(name: "Chalkboard SE Bold", size: 17)
         userName.placeholder = "Port Of Loading"
         userName.title = "Port Of Loading"
         userName.tintColor = overcastBlueColor
@@ -125,14 +117,14 @@ class Schedule: UIViewController {
     
     lazy var portOfDischarge: SkyFloatingLabelTextFieldWithIcon = {
         
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        let overcastBlueColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         let textFieldFrame = CGRect(x: 150, y: 10, width: 120, height: 45)
         let userName = SkyFloatingLabelTextFieldWithIcon(frame: textFieldFrame, iconType: .image)
         //userName.titleFont = UIFont(name: "FontAwesome", size: 15)!
         
-        userName.iconFont = UIFont(name: "Copperplate", size: 15)
-        userName.titleFont = UIFont(name: "Copperplate", size: 15)!
-        userName.placeholderFont = UIFont(name: "Copperplate", size: 15)!
+        userName.iconFont = UIFont(name: "Chalkboard SE Bold", size: 17)
+        //userName.titleFont = UIFont(name: "Chalkboard SE Bold", size: 17)!
+        userName.placeholderFont = UIFont(name: "Chalkboard SE Bold", size: 17)
         userName.placeholder = "Port Of Discharge"
         userName.title = "Port Of Discharge"
         userName.tintColor = overcastBlueColor
@@ -146,36 +138,22 @@ class Schedule: UIViewController {
         return userName
     }()
     
-    lazy var numberOfRecord: SkyFloatingLabelTextFieldWithIcon = {
-        
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
-        let textFieldFrame = CGRect(x: 150, y: 10, width: 120, height: 45)
-        let userName = SkyFloatingLabelTextFieldWithIcon(frame: textFieldFrame, iconType: .image)
-        //userName.titleFont = UIFont(name: "FontAwesome", size: 15)!
-        
-        userName.iconFont = UIFont(name: "Copperplate", size: 15)
-        userName.titleFont = UIFont(name: "Copperplate", size: 15)!
-        userName.placeholderFont = UIFont(name: "Copperplate", size: 15)!
-        userName.placeholder = "Number of Records"
-        userName.title = "Number of Records"
-        userName.tintColor = overcastBlueColor
-        userName.selectedTitleColor = overcastBlueColor
-        userName.selectedLineColor = overcastBlueColor
-        
-        let image = UIImage.fontAwesomeIcon(name: .list, style: .solid, textColor: overcastBlueColor, size: CGSize(width: 50, height: 50))
-        
-        userName.iconImage = image
-        
-        return userName
-    }()
     
     lazy var searchBtn: UIButton = {
         let loginBtn = UIButton(type: .custom)
         loginBtn.setTitle("SEARCH", for: .normal)
-        loginBtn.titleLabel?.font = UIFont(name: "Copperplate", size: 15)
-        loginBtn.backgroundColor = UIColor(red:0.02, green:0.23, blue:0.48, alpha:1.0)
+        loginBtn.titleLabel?.font = UIFont(name: "Chalkboard SE Bold", size: 17)
+        loginBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        loginBtn.backgroundColor = UIColor(red:0.00, green:0.11, blue:0.47, alpha:1.0)
         loginBtn.addTarget(self, action: #selector(scheduleList), for: .touchUpInside)
         return loginBtn
+    }()
+    
+    lazy var activityIndicator: UIActivityIndicatorView = {
+       let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        return activityIndicator
     }()
     
     override func viewDidLoad() {
@@ -185,14 +163,15 @@ class Schedule: UIViewController {
         setupNavbar()
         setupView()
         setupConstraints()
-        PortOfLoadingPickerView.delegate = self
-        PortOfLoadingPickerView1.delegate = self
-        PortOfLoadingPickerView2.delegate = self
+        customView()
         
-        shipmentDate.inputView = datePicker
+        PortOfLoadingPickerView.delegate = self
+        
+        //shipmentDate.inputView = datePicker
+        shipmentDate.delegate = self
         portOfLoading.inputView = PortOfLoadingPickerView
         portOfDischarge.inputView = PortOfLoadingPickerView
-        numberOfRecord.inputView = PortOfLoadingPickerView
+        
         
         getList()
     }
@@ -204,8 +183,8 @@ class Schedule: UIViewController {
         view.addSubview(shipmentDate)
         view.addSubview(portOfLoading)
         view.addSubview(portOfDischarge)
-        view.addSubview(numberOfRecord)
         view.addSubview(searchBtn)
+        view.addSubview(activityIndicator)
         //view.addSubview(imgSchedule)
     }
     
@@ -247,17 +226,17 @@ class Schedule: UIViewController {
         portOfDischarge.right(to: form, offset: -10, isActive: true)
         portOfDischarge.height(50)
         
-        // TextField NumberofRecords
-        numberOfRecord.topToBottom(of: portOfDischarge, offset: 10, isActive: true)
-        numberOfRecord.left(to: form, offset: 10, isActive: true)
-        numberOfRecord.right(to: form, offset: -10, isActive: true)
-        numberOfRecord.height(50)
-        
         // Button Search
-        searchBtn.topToBottom(of: numberOfRecord, offset: 10, isActive: true)
+        searchBtn.topToBottom(of: portOfDischarge, offset: 30, isActive: true)
         searchBtn.left(to: form, offset: 10, isActive: true)
         searchBtn.right(to: form, offset: -10, isActive: true)
-        searchBtn.height(30)
+        searchBtn.height(40)
+        
+        // Activity Indicator
+        activityIndicator.centerXToSuperview()
+        activityIndicator.centerYToSuperview()
+        activityIndicator.height(100)
+        
     }
     
     
@@ -272,6 +251,10 @@ class Schedule: UIViewController {
         
     }
     
+    func customView() {
+        searchBtn.roundedBtn(corner: 5)
+    }
+    
     @objc func datePickerChanged(_ sender: UIDatePicker) {
         shipmentDate.text = dateFormatter.string(from: sender.date)
     }
@@ -281,12 +264,64 @@ class Schedule: UIViewController {
     }
 
     @objc func scheduleList() {
-        //performSegue(withIdentifier: "ScheduleList", sender: self)
+        let token = UserDefaults.standard.string(forKey: "token")
+        let date = getDate()
+        viewModel.getScheduleList(pol: piCodeAwal!, pod: piCodeTujuan!, fromDate: date, recnum: 5, token: token!)
+        activityIndicator.startAnimating()
+        viewModel.listClosure = {
+            self.listDataSchedule = self.viewModel.listData
+        }
+        viewModel.didFinish = {
+            self.performSegue(withIdentifier: "ScheduleList", sender: self)
+            self.activityIndicator.stopAnimating()
+            self.listDataSchedule.removeAll()
+        }
         
+    }
+    
+    func getDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let string = formatter.string(from: Date())
+        let edit = string.replacingOccurrences(of: "-", with: "")
+        return edit
     }
     
     func getList() {
         viewModel.getList()
+    }
+    
+    func showTheCalendar() {
+        calendar.dateStyleComponents = CalendarComponentStyle(backgroundColor: UIColor(red: 89/255, green: 65/255, blue: 102/255, alpha: 1.0),
+                                                              textColor: .white,
+                                                              highlightColor: UIColor(red: 126/255, green: 192/255, blue: 196/255, alpha: 1.0).withAlphaComponent(0.5))
+        calendar.yearStyleComponents = CalendarComponentStyle(backgroundColor: UIColor(red: 126/255, green: 192/255, blue: 196/255, alpha: 1.0),
+                                                              textColor: .black, highlightColor: .white)
+        calendar.monthStyleComponents = CalendarComponentStyle(backgroundColor: UIColor(red: 47/255, green: 60/255, blue: 95/255, alpha: 1.0),
+                                                               textColor: UIColor(red: 126/255, green: 192/255, blue: 196/255, alpha: 1.0),
+                                                               highlightColor: UIColor.white)
+        
+        calendar.subscriber = { [weak self] (date) in guard let checkedSelf = self else { return }
+            if date != nil {
+                checkedSelf.selectedDate = date
+                let _ = Date(timeIntervalSince1970: TimeInterval(date?.doubleVal ?? 0))
+                if let day = date?.day, let month = date?.month, let year = date?.year {
+                    let dateString = day + " " + month + " " + year
+                    //checkedSelf.selectDateButton.setTitle(dateString, for: .normal)
+                    self?.shipmentDate.text = "\(dateString)"
+                }
+            }
+        }
+        calendar.preSelectedDate = selectedDate
+        self.present(calendar, animated: false, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ScheduleList" {
+            let destinationVC = segue.destination as! ListScheduleNC
+            let targetController = destinationVC.topViewController as! ScheduleList
+            targetController.listDataSchedule = listDataSchedule
+        }
     }
     
 }
@@ -298,53 +333,28 @@ extension Schedule: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-//        if rsgnFirstRespon == 1 {
-//            return pickerDataLoading.count
-//        }
-//        else if rsgnFirstRespon == 2 {
-//            return pickerDataDischarge.count
-//        }
-//        else if rsgnFirstRespon == 3 {
-//            return pickerDataRecord.count
-//        }
         if portOfLoading.isFirstResponder {
-            rsgnFirstRespon = 1
             return viewModel.piname.count
         }
         else if portOfDischarge.isFirstResponder {
-            rsgnFirstRespon =  2
+            
             return viewModel.piname.count
         }
-        else if numberOfRecord.isFirstResponder {
-            rsgnFirstRespon =  3
-            return pickerDataRecord.count
-        }
-        return 4
+        return 0
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if portOfLoading.isFirstResponder {
-            rsgnFirstRespon = 1
+            //rsgnFirstRespon = 1
             portOfLoading.text = viewModel.piname[row]
+            piCodeAwal = viewModel.picode[row]
         }
         else if portOfDischarge.isFirstResponder {
-            rsgnFirstRespon =  2
+            //rsgnFirstRespon =  2
             portOfDischarge.text = viewModel.piname[row]
+            piCodeTujuan = viewModel.picode[row]
+            
         }
-        else if numberOfRecord.isFirstResponder {
-            rsgnFirstRespon =  3
-            numberOfRecord.text = pickerDataRecord[row]
-        }
-//        if rsgnFirstRespon == 1 {
-//            portOfLoading.text = pickerDataLoading[row]
-//        }
-//        else if rsgnFirstRespon == 2 {
-//            portOfDischarge.text = pickerDataDischarge[row]
-//        }
-//        else if rsgnFirstRespon == 3 {
-//            numberOfRecord.text = (pickerDataRecord[row])
-//        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -357,12 +367,14 @@ extension Schedule: UIPickerViewDelegate, UIPickerViewDataSource {
             //rsgnFirstRespon =  2
             return viewModel.piname[row]
         }
-        else if numberOfRecord.isFirstResponder {
-            //rsgnFirstRespon =  3
-            return pickerDataRecord[row]
-        }
+
         return nil
         
         }
 }
 
+extension Schedule: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        showTheCalendar()
+    }
+}

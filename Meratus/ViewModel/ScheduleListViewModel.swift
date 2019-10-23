@@ -12,7 +12,7 @@ import Foundation
 class ScheduleListViewModel {
     
     
-    var data: [ListScheduleModel?]?
+    var data =  [ListScheduleModel?]()
     
     
 }

@@ -49,7 +49,7 @@ struct  ScheduleServices {
     func requestListSchedule(pol: String, pod: String, fromDate: String, recnum: Int, token: String, completion: @escaping([ListScheduleModel?], Error?) -> ())
     {
         let url = URL(string: "http://api.meratusline.com:8888/RemoteAPIVesselScheduleSealiner.ashx")
-        let data = "[{\"POL\":\"\(pol)\",\"POD\":\"\(pod)\",\"FROMDATE\":\"\(fromDate)\",\"RECNUM\":\"\(recnum)\",\"TOKEN\":\"\(token)\"}]"
+        let data = "[{\"POL\":\"\(pol)\",\"POD\":\"\(pod)\",\"FROMDATE\":\"\(fromDate)\",\"RECNUM\": 5,\"TOKEN\":\"\(token)\"}]"
         var request = URLRequest(url: url!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.httpBody = data.data(using: .utf8)
@@ -63,7 +63,7 @@ struct  ScheduleServices {
             }
             if let data = response.result.value {
                 let fixValue = data.dropFirst().dropLast()
-                
+                print("fix Value")
                 do{
                     
                     let decoder = JSONDecoder()
