@@ -1,32 +1,51 @@
 PODS:
   - Alamofire (4.9.0)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
   - FontAwesome.swift (1.6.0)
+  - ImageSlideshow/Alamofire (1.8.1):
+    - AlamofireImage (~> 3.0)
+    - ImageSlideshow/Core
+  - ImageSlideshow/Core (1.8.1)
+  - JJFloatingActionButton (2.1.0)
   - SkyFloatingLabelTextField (3.7.0)
   - SwiftyJSON (4.3.0)
   - TinyConstraints (4.0.1)
+  - XLPagerTabStrip (8.1.0)
 
 DEPENDENCIES:
   - Alamofire
   - FontAwesome.swift (~> 1.6.0)
+  - ImageSlideshow/Alamofire
+  - JJFloatingActionButton
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftyJSON (~> 4.0)
   - TinyConstraints
+  - XLPagerTabStrip (~> 8.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - AlamofireImage
     - FontAwesome.swift
+    - ImageSlideshow
+    - JJFloatingActionButton
     - SkyFloatingLabelTextField
     - SwiftyJSON
     - TinyConstraints
+    - XLPagerTabStrip
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   FontAwesome.swift: 71a422e7b209ee940c7c21a5d13964ecf2897ca4
+  ImageSlideshow: 634865d7d4e96f21e3830a31b51bde768cc94cea
+  JJFloatingActionButton: 26805f87c7e9f68c6a91bd9f3f09c2e6b904a84f
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
+  XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
 
-PODFILE CHECKSUM: bc10d189b200a747b265e5a76571503e63bdba8f
+PODFILE CHECKSUM: a9d443c7007a02356b4be5da9cd8ee6f1e0d1151
 
 COCOAPODS: 1.5.3

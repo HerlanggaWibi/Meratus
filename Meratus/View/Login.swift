@@ -112,6 +112,10 @@ class Login: UIViewController {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.resignFirstResponder()
+    }
+    
     @objc func forgetPassword() {
         print("Forget Password")
     }

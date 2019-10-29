@@ -10,5 +10,8 @@ pod "TinyConstraints"
 pod 'Alamofire'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'FontAwesome.swift', '~> 1.6.0'
-
+pod 'XLPagerTabStrip', '~> 8.0'
+#pod 'SimpleCheckbox'
+pod 'ImageSlideshow/Alamofire'
+pod 'JJFloatingActionButton'
 end

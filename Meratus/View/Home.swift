@@ -7,25 +7,29 @@
 //
 
 import UIKit
+import ImageSlideshow
 
 class Home: UIViewController {
     
     @IBOutlet weak var schedule: UIButton!
     @IBOutlet weak var tracking: UIButton!
     @IBOutlet weak var booking: UIButton!
+    @IBOutlet weak var slideshow: ImageSlideshow!
+    
+    let viewModel = HomeViewModel(HomeServices: HomeServices())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupButtonView()
         setupNavbar()
+        getSlideShow()
     }
     
     func setupButtonView() {
         schedule.setHomeViewButton()
         tracking.setHomeViewButton()
         booking.setHomeViewButton()
-        
         
     }
     
@@ -39,9 +43,18 @@ class Home: UIViewController {
         navigationItem.titleView = logoContainer
         
     }
+    
+    func getSlideShow() {
+            slideshow.setImageInputs([
+                AlamofireSource(urlString: "http://api.meratusline.com:8888/Files/images/slide1.jpg")!,
+                AlamofireSource(urlString: "http://api.meratusline.com:8888/Files/images/slide2.jpg")!,
+                AlamofireSource(urlString: "http://api.meratusline.com:8888/Files/images/slide3.jpg")!
+            ])
+            slideshow.slideshowInterval = 2.0
+            slideshow.contentScaleMode = UIView.ContentMode.scaleAspectFill
+    }
 
 }
-
 
 extension UIButton {
     

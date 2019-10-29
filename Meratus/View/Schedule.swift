@@ -111,7 +111,7 @@ class Schedule: UIViewController {
         let image = UIImage.fontAwesomeIcon(name: .truckLoading, style: .solid, textColor: overcastBlueColor, size: CGSize(width: 50, height: 50))
         
         userName.iconImage = image
-        
+        userName.addTarget(self, action: #selector(pick), for: .touchDown)
         return userName
     }()
     
@@ -132,9 +132,9 @@ class Schedule: UIViewController {
         userName.selectedLineColor = overcastBlueColor
         
         let image = UIImage.fontAwesomeIcon(name: .truckLoading, style: .solid, textColor: overcastBlueColor, size: CGSize(width: 50, height: 50))
-        
+        userName.addTarget(self, action: #selector(pick2), for: .touchDown)
         userName.iconImage = image
-        
+        //userName.addTarget(self, action: #selector(pick), for: .touchDown)
         return userName
     }()
     
@@ -156,6 +156,113 @@ class Schedule: UIViewController {
         return activityIndicator
     }()
     
+    @objc func pick() {
+        //let blueColor = sender.backgroundColor
+        let regularFont = UIFont.systemFont(ofSize: 16)
+        let boldFont = UIFont.boldSystemFont(ofSize: 16)
+        
+        let blueAppearance = YBTextPickerAppearanceManager.init(
+            pickerTitle         : "Select Fruits",
+            titleFont           : boldFont,
+            titleTextColor      : .black,
+            titleBackground     : .clear,
+            searchBarFont       : regularFont,
+            searchBarPlaceholder: "Search Fruits",
+            closeButtonTitle    : "Cancel",
+            closeButtonColor    : .darkGray,
+            closeButtonFont     : regularFont,
+            doneButtonTitle     : "Done",
+            doneButtonColor     : UIColor.blue,
+            doneButtonFont      : boldFont,
+            checkMarkPosition   : .Right,
+            itemCheckedImage    : UIImage(named:"blue_ic_checked"),
+            itemUncheckedImage  : UIImage(),
+            itemColor           : .black,
+            itemFont            : regularFont
+        )
+        
+        let picker = YBTextPicker.init(with: viewModel.piname, appearance: blueAppearance,
+                                       onCompletion: { (selectedIndexes, selectedValues) in
+                                            
+                                            var values = [String]()
+                                            for index in selectedIndexes{
+                                                values.append(self.viewModel.piname[index])
+                                                self.piCodeAwal = self.viewModel.picode[index]
+                                            }
+                                            
+                                            self.portOfLoading.text = values[0]
+                                        
+                                        
+        },
+                                       onCancel: {
+                                        print("Cancelled")
+        }
+        )
+        
+//        if let title = btnFruitsPicker.title(for: .normal){
+//            if title.contains(","){
+//                picker.preSelectedValues = title.components(separatedBy: ", ")
+//            }
+//        }
+        picker.allowMultipleSelection = false
+        
+        picker.show(withAnimation: .Fade)
+    }
+    
+    @objc func pick2() {
+        //let blueColor = sender.backgroundColor
+        let regularFont = UIFont.systemFont(ofSize: 16)
+        let boldFont = UIFont.boldSystemFont(ofSize: 16)
+        
+        let blueAppearance = YBTextPickerAppearanceManager.init(
+            pickerTitle         : "Select Fruits",
+            titleFont           : boldFont,
+            titleTextColor      : .black,
+            titleBackground     : .clear,
+            searchBarFont       : regularFont,
+            searchBarPlaceholder: "Search Fruits",
+            closeButtonTitle    : "Cancel",
+            closeButtonColor    : .darkGray,
+            closeButtonFont     : regularFont,
+            doneButtonTitle     : "Done",
+            doneButtonColor     : UIColor.blue,
+            doneButtonFont      : boldFont,
+            checkMarkPosition   : .Right,
+            itemCheckedImage    : UIImage(named:"blue_ic_checked"),
+            itemUncheckedImage  : UIImage(),
+            itemColor           : .black,
+            itemFont            : regularFont
+        )
+        
+        let picker = YBTextPicker.init(with: viewModel.piname, appearance: blueAppearance,
+                                       onCompletion: { (selectedIndexes, selectedValues) in
+                                        
+                                        var values = [String]()
+                                        for index in selectedIndexes{
+                                            values.append(self.viewModel.piname[index])
+                                            self.piCodeTujuan = self.viewModel.picode[index]
+                                        }
+                                        
+                                        self.portOfDischarge.text = values[0]
+                                        
+                                        
+        },
+                                       onCancel: {
+                                        print("Cancelled")
+        }
+        )
+        
+        //        if let title = btnFruitsPicker.title(for: .normal){
+        //            if title.contains(","){
+        //                picker.preSelectedValues = title.components(separatedBy: ", ")
+        //            }
+        //        }
+        picker.allowMultipleSelection = false
+        
+        picker.show(withAnimation: .Fade)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -169,8 +276,8 @@ class Schedule: UIViewController {
         
         //shipmentDate.inputView = datePicker
         shipmentDate.delegate = self
-        portOfLoading.inputView = PortOfLoadingPickerView
-        portOfDischarge.inputView = PortOfLoadingPickerView
+        //portOfLoading.inputView = PortOfLoadingPickerView
+        //portOfDischarge.inputView = PortOfLoadingPickerView
         
         
         getList()

@@ -7,11 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F065CBF2362CF91003C68ED /* SlideShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F065CBE2362CF91003C68ED /* SlideShow.swift */; };
+		0F065CC12362D001003C68ED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F065CC02362D001003C68ED /* HomeViewModel.swift */; };
+		0F065CC32362D07C003C68ED /* HomeServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F065CC22362D07C003C68ED /* HomeServices.swift */; };
 		0F4812C023542C82000FBC49 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4812BF23542C82000FBC49 /* Login.swift */; };
 		0F4812C52354624C000FBC49 /* API_Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4812C42354624C000FBC49 /* API_Services.swift */; };
 		0F4812C7235466C5000FBC49 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4812C6235466C5000FBC49 /* LoginModel.swift */; };
 		0F4812C923546A3E000FBC49 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4812C823546A3E000FBC49 /* LoginViewModel.swift */; };
 		0F72FC882355747300248BD5 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F72FC872355747200248BD5 /* Account.swift */; };
+		0F78AC2D23617C79003332AC /* Contoh1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78AC2C23617C79003332AC /* Contoh1.swift */; };
+		0F78AC2F23617C95003332AC /* Contoh2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78AC2E23617C95003332AC /* Contoh2.swift */; };
+		0FD04A2523600F71003B78B7 /* YBTextPickerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD04A1C23600F71003B78B7 /* YBTextPickerDataModel.swift */; };
+		0FD04A2623600F71003B78B7 /* YBTextPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD04A1E23600F71003B78B7 /* YBTextPickerCell.xib */; };
+		0FD04A2723600F71003B78B7 /* YBTextPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD04A1F23600F71003B78B7 /* YBTextPickerCell.swift */; };
+		0FD04A2823600F71003B78B7 /* YBTextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD04A2023600F71003B78B7 /* YBTextPicker.swift */; };
+		0FD04A2923600F71003B78B7 /* YBTextPicker_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD04A2223600F71003B78B7 /* YBTextPicker_checked.png */; };
+		0FD04A2A23600F71003B78B7 /* YBTextPicker_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD04A2323600F71003B78B7 /* YBTextPicker_unchecked.png */; };
+		0FD04A2B23600F71003B78B7 /* YBTextPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD04A2423600F71003B78B7 /* YBTextPicker.xib */; };
+		0FD4311A2366A6F000F8E77F /* ConsigneeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD431192366A6F000F8E77F /* ConsigneeList.swift */; };
+		0FD4311C2366A7D700F8E77F /* ConsigneeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4311B2366A7D700F8E77F /* ConsigneeListCell.swift */; };
+		0FD431202366E7F600F8E77F /* AddNewConsignee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4311F2366E7F600F8E77F /* AddNewConsignee.swift */; };
+		0FD431222366F5C400F8E77F /* ModifyConsignee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD431212366F5C400F8E77F /* ModifyConsignee.swift */; };
 		0FDC24C7234F0E0300552BCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC24C6234F0E0300552BCB /* AppDelegate.swift */; };
 		0FDC24C9234F0E0300552BCB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDC24C8234F0E0300552BCB /* Home.swift */; };
 		0FDC24CC234F0E0300552BCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDC24CA234F0E0300552BCB /* Main.storyboard */; };
@@ -39,11 +55,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F065CBE2362CF91003C68ED /* SlideShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideShow.swift; sourceTree = "<group>"; };
+		0F065CC02362D001003C68ED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0F065CC22362D07C003C68ED /* HomeServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServices.swift; sourceTree = "<group>"; };
 		0F4812BF23542C82000FBC49 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0F4812C42354624C000FBC49 /* API_Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Services.swift; sourceTree = "<group>"; };
 		0F4812C6235466C5000FBC49 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		0F4812C823546A3E000FBC49 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		0F72FC872355747200248BD5 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		0F78AC2C23617C79003332AC /* Contoh1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contoh1.swift; sourceTree = "<group>"; };
+		0F78AC2E23617C95003332AC /* Contoh2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contoh2.swift; sourceTree = "<group>"; };
+		0FD04A1C23600F71003B78B7 /* YBTextPickerDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBTextPickerDataModel.swift; sourceTree = "<group>"; };
+		0FD04A1E23600F71003B78B7 /* YBTextPickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBTextPickerCell.xib; sourceTree = "<group>"; };
+		0FD04A1F23600F71003B78B7 /* YBTextPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBTextPickerCell.swift; sourceTree = "<group>"; };
+		0FD04A2023600F71003B78B7 /* YBTextPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YBTextPicker.swift; sourceTree = "<group>"; };
+		0FD04A2223600F71003B78B7 /* YBTextPicker_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YBTextPicker_checked.png; sourceTree = "<group>"; };
+		0FD04A2323600F71003B78B7 /* YBTextPicker_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YBTextPicker_unchecked.png; sourceTree = "<group>"; };
+		0FD04A2423600F71003B78B7 /* YBTextPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBTextPicker.xib; sourceTree = "<group>"; };
+		0FD431192366A6F000F8E77F /* ConsigneeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsigneeList.swift; sourceTree = "<group>"; };
+		0FD4311B2366A7D700F8E77F /* ConsigneeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsigneeListCell.swift; sourceTree = "<group>"; };
+		0FD4311F2366E7F600F8E77F /* AddNewConsignee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewConsignee.swift; sourceTree = "<group>"; };
+		0FD431212366F5C400F8E77F /* ModifyConsignee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyConsignee.swift; sourceTree = "<group>"; };
 		0FDC24C3234F0E0300552BCB /* Meratus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meratus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDC24C6234F0E0300552BCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDC24C8234F0E0300552BCB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -92,8 +124,40 @@
 			children = (
 				0F4812C42354624C000FBC49 /* API_Services.swift */,
 				0FDD697323598FF300BE021D /* ScheduleServices.swift */,
+				0F065CC22362D07C003C68ED /* HomeServices.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0FD04A1B23600F71003B78B7 /* YBTextPicker */ = {
+			isa = PBXGroup;
+			children = (
+				0FD04A1C23600F71003B78B7 /* YBTextPickerDataModel.swift */,
+				0FD04A1D23600F71003B78B7 /* YBTextPickerCell */,
+				0FD04A2023600F71003B78B7 /* YBTextPicker.swift */,
+				0FD04A2123600F71003B78B7 /* Assets */,
+				0FD04A2423600F71003B78B7 /* YBTextPicker.xib */,
+			);
+			name = YBTextPicker;
+			path = "../../../../Downloads/YBTextPicker-master/YBTextPicker/YBTextPicker";
+			sourceTree = "<group>";
+		};
+		0FD04A1D23600F71003B78B7 /* YBTextPickerCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FD04A1E23600F71003B78B7 /* YBTextPickerCell.xib */,
+				0FD04A1F23600F71003B78B7 /* YBTextPickerCell.swift */,
+			);
+			path = YBTextPickerCell;
+			sourceTree = "<group>";
+		};
+		0FD04A2123600F71003B78B7 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0FD04A2223600F71003B78B7 /* YBTextPicker_checked.png */,
+				0FD04A2323600F71003B78B7 /* YBTextPicker_unchecked.png */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		0FDC24BA234F0E0300552BCB = {
@@ -117,6 +181,7 @@
 		0FDC24C5234F0E0300552BCB /* Meratus */ = {
 			isa = PBXGroup;
 			children = (
+				0FD04A1B23600F71003B78B7 /* YBTextPicker */,
 				0FEA5FDC235DBC7C0065DF98 /* AVCalendar */,
 				0FDD696E23595C0B00BE021D /* Cell */,
 				0F72A70723558D37004A7A9E /* Services */,
@@ -125,6 +190,8 @@
 				0FDC24D8234F0E9E00552BCB /* Model */,
 				0FDC24C6234F0E0300552BCB /* AppDelegate.swift */,
 				0FDC24CA234F0E0300552BCB /* Main.storyboard */,
+				0F78AC2C23617C79003332AC /* Contoh1.swift */,
+				0F78AC2E23617C95003332AC /* Contoh2.swift */,
 				0FDC24CD234F0E0E00552BCB /* Assets.xcassets */,
 				0FDC24CF234F0E0E00552BCB /* LaunchScreen.storyboard */,
 				0FDC24D2234F0E0E00552BCB /* Info.plist */,
@@ -140,6 +207,7 @@
 				0F4812C6235466C5000FBC49 /* LoginModel.swift */,
 				0FDD6975235994A400BE021D /* RemotePelabuhan.swift */,
 				0FDD69772359A35E00BE021D /* ListScheduleModel.swift */,
+				0F065CBE2362CF91003C68ED /* SlideShow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +218,7 @@
 				0F4812C823546A3E000FBC49 /* LoginViewModel.swift */,
 				0FDD697123598E0300BE021D /* ScheduleViewModel.swift */,
 				0FDD69792359BF4B00BE021D /* ScheduleListViewModel.swift */,
+				0F065CC02362D001003C68ED /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -162,6 +231,9 @@
 				0F4812BF23542C82000FBC49 /* Login.swift */,
 				0F72FC872355747200248BD5 /* Account.swift */,
 				0FDD696C23595AF700BE021D /* ScheduleList.swift */,
+				0FD431192366A6F000F8E77F /* ConsigneeList.swift */,
+				0FD4311F2366E7F600F8E77F /* AddNewConsignee.swift */,
+				0FD431212366F5C400F8E77F /* ModifyConsignee.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				0FDD696F23595C2B00BE021D /* ScheduleListCell.swift */,
+				0FD4311B2366A7D700F8E77F /* ConsigneeListCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -301,10 +374,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FEA5FEC235DBC7D0065DF98 /* Calendar.storyboard in Resources */,
+				0FD04A2B23600F71003B78B7 /* YBTextPicker.xib in Resources */,
 				0FEA5FEF235DBC7D0065DF98 /* CalendarAssets.xcassets in Resources */,
 				0FDC24D1234F0E0E00552BCB /* LaunchScreen.storyboard in Resources */,
 				0FDC24CE234F0E0E00552BCB /* Assets.xcassets in Resources */,
+				0FD04A2A23600F71003B78B7 /* YBTextPicker_unchecked.png in Resources */,
+				0FD04A2923600F71003B78B7 /* YBTextPicker_checked.png in Resources */,
 				0FDC24CC234F0E0300552BCB /* Main.storyboard in Resources */,
+				0FD04A2623600F71003B78B7 /* YBTextPickerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,18 +414,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Meratus/Pods-Meratus-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JJFloatingActionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -364,27 +449,39 @@
 			files = (
 				0FDD697023595C2B00BE021D /* ScheduleListCell.swift in Sources */,
 				0FE78015235070C100CD6361 /* Schedule.swift in Sources */,
+				0F065CBF2362CF91003C68ED /* SlideShow.swift in Sources */,
 				0F4812C7235466C5000FBC49 /* LoginModel.swift in Sources */,
 				0FDC24C9234F0E0300552BCB /* Home.swift in Sources */,
+				0FD4311A2366A6F000F8E77F /* ConsigneeList.swift in Sources */,
 				0FEA5FEB235DBC7D0065DF98 /* APCalendarViewController.swift in Sources */,
 				0FDD697A2359BF4B00BE021D /* ScheduleListViewModel.swift in Sources */,
+				0FD431202366E7F600F8E77F /* AddNewConsignee.swift in Sources */,
 				0FEA5FE9235DBC7D0065DF98 /* APDynamicType.swift in Sources */,
+				0FD04A2723600F71003B78B7 /* YBTextPickerCell.swift in Sources */,
+				0FD4311C2366A7D700F8E77F /* ConsigneeListCell.swift in Sources */,
 				0F4812C52354624C000FBC49 /* API_Services.swift in Sources */,
+				0F065CC32362D07C003C68ED /* HomeServices.swift in Sources */,
+				0FD04A2823600F71003B78B7 /* YBTextPicker.swift in Sources */,
 				0FDC24C7234F0E0300552BCB /* AppDelegate.swift in Sources */,
 				0FDD697223598E0300BE021D /* ScheduleViewModel.swift in Sources */,
+				0F065CC12362D001003C68ED /* HomeViewModel.swift in Sources */,
 				0FEA5FEE235DBC7D0065DF98 /* APCustomCalendarContainer.swift in Sources */,
 				0F72FC882355747300248BD5 /* Account.swift in Sources */,
 				0FF6026B235D4AAC0078089E /* ListScheduleNC.swift in Sources */,
 				0FEA5FF0235DBC7D0065DF98 /* HapticFeedbackGenerator.swift in Sources */,
 				0FEA5FED235DBC7D0065DF98 /* APCustomCalendarYearCell.swift in Sources */,
+				0F78AC2F23617C95003332AC /* Contoh2.swift in Sources */,
 				0FF7B8C9235EBCAF00F08DF5 /* AccountNC.swift in Sources */,
 				0FDD6976235994A400BE021D /* RemotePelabuhan.swift in Sources */,
 				0FEA5FEA235DBC7D0065DF98 /* APHorizontalScrollCollectionView.swift in Sources */,
 				0F4812C023542C82000FBC49 /* Login.swift in Sources */,
 				0FDD69782359A35E00BE021D /* ListScheduleModel.swift in Sources */,
 				0FDD696D23595AF700BE021D /* ScheduleList.swift in Sources */,
+				0F78AC2D23617C79003332AC /* Contoh1.swift in Sources */,
 				0FDD697423598FF300BE021D /* ScheduleServices.swift in Sources */,
 				0F4812C923546A3E000FBC49 /* LoginViewModel.swift in Sources */,
+				0FD04A2523600F71003B78B7 /* YBTextPickerDataModel.swift in Sources */,
+				0FD431222366F5C400F8E77F /* ModifyConsignee.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
